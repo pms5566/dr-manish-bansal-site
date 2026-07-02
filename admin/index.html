@@ -334,11 +334,14 @@
       animation: fade-in 0.4s ease;
     }
 
-    /* Clean background ONLY for Settings and Articles panels (no photo) */
+    /* ===== Doctor photo STRICTLY on Dashboard ONLY ===== */
+    #panelSettings,
     #panelSettings.active,
+    #panelArticles,
     #panelArticles.active {
-      background-color: transparent;
-      background-image: none;
+      background-color: var(--color-bg-body) !important;
+      background-image: none !important;
+      color: var(--color-text-dark) !important;
     }
 
     #panelSettings .dashboard-header,
@@ -353,13 +356,13 @@
 
     #panelSettings .page-title,
     #panelArticles .page-title {
-      color: var(--color-primary-dark);
+      color: var(--color-primary-dark) !important;
       font-size: 1.6rem;
     }
 
     #panelSettings .page-subtitle,
     #panelArticles .page-subtitle {
-      color: var(--color-text-muted);
+      color: var(--color-text-muted) !important;
     }
 
     @keyframes fade-in {
@@ -725,13 +728,23 @@
         padding: 6.5rem 1rem 6rem 1rem;
       }
 
-      /* Mobile Dashboard Background Image */
+      /* Mobile: Doctor photo ONLY on Dashboard */
       #panelDashboard {
         background-image: linear-gradient(to bottom, rgba(15, 34, 63, 0.93) 45%, rgba(15, 34, 63, 0.6) 80%, rgba(15, 34, 63, 0.25) 100%), 
                           url('https://assets.zyrosite.com/431tYBVZxurbdyXy/dr-manish-bansal-sv6GASZeB9aDm3dl.jpg');
         background-position: center top;
         padding: 2rem 1.25rem;
         min-height: auto;
+      }
+
+      /* Mobile: Settings and Articles — absolutely no doctor photo */
+      #panelSettings,
+      #panelSettings.active,
+      #panelArticles,
+      #panelArticles.active {
+        background-color: var(--color-bg-body) !important;
+        background-image: none !important;
+        color: var(--color-text-dark) !important;
       }
 
       #panelDashboard .page-title {
