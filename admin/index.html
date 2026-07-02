@@ -743,10 +743,16 @@
         overflow-x: hidden;
       }
 
-      /* Mobile: Dashboard - no blank space */
+      /* Mobile: Dashboard - show doctor photo clearly */
       #panelDashboard {
-        background-size: cover;
-        background-position: center top;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(15, 34, 63, 0.75) 0%,
+          rgba(15, 34, 63, 0.85) 60%,
+          rgba(15, 34, 63, 0.95) 100%
+        ) !important;
+        background-size: cover !important;
+        background-position: right top !important;
         padding: 1.75rem 1rem;
         min-height: unset !important;
         height: auto;
@@ -1117,7 +1123,7 @@
     <div class="viewport-container">
       
       <!-- 1. DASHBOARD PANEL WITH DOCTOR PHOTO COVER -->
-      <section class="dashboard-panel active" id="panelDashboard" style="background-image: linear-gradient(to right, rgba(15, 34, 63, 0.95) 30%, rgba(15, 34, 63, 0.7) 65%, rgba(15, 34, 63, 0.3) 100%), url('https://assets.zyrosite.com/431tYBVZxurbdyXy/dr-manish-bansal-sv6GASZeB9aDm3dl.jpg');">
+      <section class="dashboard-panel active" id="panelDashboard" style="background-image: linear-gradient(to right, rgba(15, 34, 63, 0.92) 25%, rgba(15, 34, 63, 0.55) 55%, rgba(15, 34, 63, 0.15) 100%), url('https://assets.zyrosite.com/431tYBVZxurbdyXy/dr-manish-bansal-sv6GASZeB9aDm3dl.jpg'); background-position: right top;">
         <div>
           <h1 class="page-title">Welcome, Dr. Manish Bansal</h1>
           <p class="page-subtitle">Manage clinical details and articles for The Joint Clinic.</p>
