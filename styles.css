@@ -460,24 +460,22 @@ ul {
   display: none;
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 0.75rem;
   transform: translateY(-50%);
-  background: #ffffff;
-  border-radius: 0 12px 12px 0;
-  padding: 14px 16px;
-  box-shadow: 4px 0 24px rgba(0,0,0,0.25);
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
   align-items: center;
   justify-content: center;
-  border-left: none;
-  border: 2px solid #f1f5f9;
-  border-left: none;
 }
 
 .mobile-hero-logo img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
 }
 
 
