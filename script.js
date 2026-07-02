@@ -57,6 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => scrollObserver.observe(section));
 
+  // 3. Scroll Reveal Observer for Premium Reveal Animations
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target); // Reveal only once
+      }
+    });
+  }, {
+    threshold: 0.05,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
   // 3. Callback Consultation Form Submission Simulator
   const form = document.getElementById('consultationForm');
   const successNotification = document.getElementById('successNotification');
@@ -191,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         articles.forEach(article => {
           const card = document.createElement('div');
-          card.className = 'article-card';
+          card.className = 'article-card reveal';
           card.setAttribute('data-article', article.id);
           card.innerHTML = `
             <div class="article-image">
@@ -205,6 +221,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           `;
           educationGrid.appendChild(card);
+          // Observe the dynamic card for scroll reveal
+          if (typeof revealObserver !== 'undefined') {
+            revealObserver.observe(card);
+          }
         });
         
         // Setup Modal Handlers for the dynamically loaded articles
@@ -269,6 +289,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   };
+
+
 
   // Trigger CMS Data Loading
   loadCmsData();

@@ -23,7 +23,7 @@
   
   /* Layout Options */
   --container-width: 1200px;
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   --shadow-sm: 0 2px 4px rgba(13, 20, 26, 0.04);
   --shadow-md: 0 10px 20px rgba(13, 20, 26, 0.06);
   --shadow-lg: 0 20px 40px rgba(13, 20, 26, 0.1);
@@ -2012,4 +2012,20 @@ ul {
     right: 0;
   }
 }
+
+/* -------------------------------------------------------------
+   SCROLL REVEAL ANIMATIONS
+------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
