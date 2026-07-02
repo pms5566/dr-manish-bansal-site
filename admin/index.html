@@ -244,10 +244,8 @@
       line-height: 1.5;
     }
 
-    /* Dashboard Panel with doctor cover image */
+    /* Dashboard Panel - background image set via inline style on HTML element */
     #panelDashboard {
-      background-image: linear-gradient(to right, rgba(15, 34, 63, 0.95) 30%, rgba(15, 34, 63, 0.7) 65%, rgba(15, 34, 63, 0.3) 100%), 
-                        url('https://assets.zyrosite.com/431tYBVZxurbdyXy/dr-manish-bansal-sv6GASZeB9aDm3dl.jpg');
       background-size: cover;
       background-position: right center;
       border-radius: var(--radius-md);
@@ -334,14 +332,10 @@
       animation: fade-in 0.4s ease;
     }
 
-    /* ===== Doctor photo STRICTLY on Dashboard ONLY ===== */
+    /* Settings and Articles panels: clean plain background */
     #panelSettings,
-    #panelSettings.active,
-    #panelArticles,
-    #panelArticles.active {
-      background-color: var(--color-bg-body) !important;
-      background-image: none !important;
-      color: var(--color-text-dark) !important;
+    #panelArticles {
+      background: var(--color-bg-body);
     }
 
     #panelSettings .dashboard-header,
@@ -356,13 +350,13 @@
 
     #panelSettings .page-title,
     #panelArticles .page-title {
-      color: var(--color-primary-dark) !important;
+      color: var(--color-primary-dark);
       font-size: 1.6rem;
     }
 
     #panelSettings .page-subtitle,
     #panelArticles .page-subtitle {
-      color: var(--color-text-muted) !important;
+      color: var(--color-text-muted);
     }
 
     @keyframes fade-in {
@@ -728,23 +722,12 @@
         padding: 6.5rem 1rem 6rem 1rem;
       }
 
-      /* Mobile: Doctor photo ONLY on Dashboard */
+      /* Mobile: Dashboard background set via inline style, no CSS needed here */
       #panelDashboard {
-        background-image: linear-gradient(to bottom, rgba(15, 34, 63, 0.93) 45%, rgba(15, 34, 63, 0.6) 80%, rgba(15, 34, 63, 0.25) 100%), 
-                          url('https://assets.zyrosite.com/431tYBVZxurbdyXy/dr-manish-bansal-sv6GASZeB9aDm3dl.jpg');
+        background-size: cover;
         background-position: center top;
         padding: 2rem 1.25rem;
         min-height: auto;
-      }
-
-      /* Mobile: Settings and Articles — absolutely no doctor photo */
-      #panelSettings,
-      #panelSettings.active,
-      #panelArticles,
-      #panelArticles.active {
-        background-color: var(--color-bg-body) !important;
-        background-image: none !important;
-        color: var(--color-text-dark) !important;
       }
 
       #panelDashboard .page-title {
@@ -1044,7 +1027,7 @@
     <div class="viewport-container">
       
       <!-- 1. DASHBOARD PANEL WITH DOCTOR PHOTO COVER -->
-      <section class="dashboard-panel active" id="panelDashboard">
+      <section class="dashboard-panel active" id="panelDashboard" style="background-image: linear-gradient(to right, rgba(15, 34, 63, 0.95) 30%, rgba(15, 34, 63, 0.7) 65%, rgba(15, 34, 63, 0.3) 100%), url('https://assets.zyrosite.com/431tYBVZxurbdyXy/dr-manish-bansal-sv6GASZeB9aDm3dl.jpg');">
         <div>
           <h1 class="page-title">Welcome, Dr. Manish Bansal</h1>
           <p class="page-subtitle">Manage clinical details and articles for The Joint Clinic.</p>
