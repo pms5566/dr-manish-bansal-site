@@ -571,6 +571,13 @@
       transition: all 0.3s ease;
       background-color: #ffffff;
       color: var(--color-text-muted);
+      flex-shrink: 0;
+    }
+
+    .action-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
     }
 
     .action-btn:hover {
@@ -736,12 +743,13 @@
         overflow-x: hidden;
       }
 
-      /* Mobile: Dashboard */
+      /* Mobile: Dashboard - no blank space */
       #panelDashboard {
         background-size: cover;
         background-position: center top;
         padding: 1.75rem 1rem;
-        min-height: auto;
+        min-height: unset !important;
+        height: auto;
         border-radius: var(--radius-sm);
       }
 
@@ -932,9 +940,30 @@
 
       .action-btn {
         flex: 1;
-        height: 44px;
+        width: auto;
+        height: 42px;
         font-size: 0.8rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        gap: 0.4rem;
         justify-content: center;
+        border-radius: 8px;
+      }
+
+      .action-btn svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      /* Show label text next to icon on mobile */
+      .action-btn[title="Edit"]::after {
+        content: 'Edit';
+      }
+
+      .action-btn[title="Delete"]::after {
+        content: 'Delete';
+        color: var(--color-danger);
       }
 
       .articles-control-row {
@@ -1111,7 +1140,7 @@
 
         <div class="promo-banner">
           <h2 class="promo-title">Clinical Content Management</h2>
-          <p class="promo-text">Your website is running in fully dynamic CMS mode. Any change you make inside the **Clinic Settings** or **Patient Articles** tabs will be updated in the local JSON files instantly and loaded on the live homepage immediately without writing any code.</p>
+          <p class="promo-text">Your website is running in fully dynamic CMS mode. Any change you make inside the <strong>Clinic Settings</strong> or <strong>Patient Articles</strong> tabs will be updated in the local JSON files instantly and loaded on the live homepage immediately without writing any code.</p>
           <div class="promo-actions">
             <button class="btn btn-primary" onclick="showPanel('panelSettings')">Edit Clinic Info</button>
             <button class="btn btn-outline" style="color: #ffffff; border-color: rgba(255,255,255,0.4);" onclick="showPanel('panelArticles')">Manage Articles</button>
