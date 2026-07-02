@@ -449,6 +449,11 @@ ul {
   }
 }
 
+/* Mobile Doctor Photo - hidden on desktop */
+.mobile-hero-photo {
+  display: none;
+}
+
 /* -------------------------------------------------------------
    STATISTICS ROW SECTION
 ------------------------------------------------------------- */
@@ -1696,20 +1701,31 @@ ul {
     height: 56px;
   }
 
-  /* Hero Section */
+  /* Hero Section - plain bg on mobile, real img used instead */
   .hero-section {
-    padding: 3rem 0 3rem;
-    background-image: 
-      linear-gradient(to bottom, 
-        rgba(248, 250, 252, 0.55) 0%, 
-        rgba(248, 250, 252, 0.75) 45%, 
-        rgba(248, 250, 252, 0.95) 75%, 
-        rgba(248, 250, 252, 1) 100%
-      ), 
-      url('https://assets.zyrosite.com/431tYBVZxurbdyXy/dr-manish-bansal-sv6GASZeB9aDm3dl.jpg');
-    background-position: right top;
-    background-size: cover;
-    padding-top: 14rem;
+    padding: 0;
+    background-image: none;
+    background: var(--color-bg-body);
+  }
+
+  /* Show doctor photo as real img on mobile */
+  .mobile-hero-photo {
+    display: block;
+    width: 100%;
+    line-height: 0;
+  }
+
+  .mobile-hero-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .hero-container {
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .hero-container {
